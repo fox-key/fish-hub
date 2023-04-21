@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"target": "es6",
+		"module": "esnext",
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"strictNullChecks": true,
+		"jsx": "react-jsx",
+		"moduleResolution": "node",
+		"baseUrl": "src",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"noImplicitAny": true,
+		"lib": ["dom", "es2017"],
+		"skipLibCheck": true,
+		"declaration": true,
+		"allowSyntheticDefaultImports": true,
+		"outDir": "lib"
+	},
+	"include": ["src"]
+}

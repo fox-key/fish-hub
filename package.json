@@ -1,0 +1,59 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "fengkai",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://10.1.15.53/root/safeliab-web.git"
+  },
+  "scripts": {
+    "commit": "git add . && git-cz",
+    "start:admin": "lerna run start --scope=fish-admin",
+    "build:admin": "lerna run build --scope=fish-admin"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.3.0",
+    "react-scripts": "5.0.1",
+    "ahooks": "3.7.1",
+    "antd": "^4.24.2",
+    "axios": "^0.27.2",
+    "downloadjs": "^1.4.7",
+    "echarts": "^5.3.3",
+    "js-base64": "^3.7.5",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "lru-cache": "^6.0.0",
+    "mime-match": "^1.0.2",
+    "nprogress": "^0.2.0",
+    "query-string": "^7.1.1",
+    "store2": "^2.14.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "lerna": "^6.0.3",
+    "@craco/craco": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "http-proxy-middleware": "^2.0.1",
+    "lint-staged": "^12.1.4",
+    "typescript": "^4.7.4",
+    "@types/lodash": "^4.14.182",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  }
+}

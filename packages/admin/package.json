@@ -1,0 +1,30 @@
+{
+  "name": "fish-admin",
+  "version": "0.1.0",
+  "description": "鱼吧后台管理系统",
+  "main": "src/index.js",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
