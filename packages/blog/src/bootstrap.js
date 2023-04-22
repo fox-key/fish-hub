@@ -1,5 +1,4 @@
 import {Outlet} from "react-router-dom";
-import Styles from 'theme.module.less'
 import Header from 'components/Header'
 import Menu from "components/Menu";
 import {resizeListener} from "@component/utils";
@@ -26,13 +25,13 @@ export default function Bootstrap() {
         screen:useResponsive(),
         theme:color
     }}>
-        <div className={Styles.bootstrap}>
+        <div className={'bootstrap'}>
             <Header/>
             <Menu/>
-            <div className={Styles.main} style={{backgroundColor:color}}>
+            <div className={'main'} style={{backgroundColor:color}}>
                 <Outlet/>
             </div>
-            <div className={Styles.categrate} style={{backgroundColor:color}}></div>
+            <div className={'categrate'} style={{backgroundColor:color}}></div>
         </div>
     </userContext.Provider>
 
