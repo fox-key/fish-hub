@@ -1,4 +1,5 @@
 import {Outlet} from "react-router-dom";
+import 'theme.less'
 import Header from 'components/Header'
 import Menu from "components/Menu";
 import {resizeListener} from "@component/utils";
