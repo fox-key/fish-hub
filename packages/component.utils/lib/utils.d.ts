@@ -1,3 +1,4 @@
+export function resizeListener(): void;
 export function logoutOut(navigate: any): void;
 export function phoneEncryption(phone: any): any[];
 export function idEncryption(id: any): any;

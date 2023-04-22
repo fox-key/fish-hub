@@ -11,14 +11,23 @@ import {
 } from 'lodash';
 import moment from 'moment';
 import React from 'react';
-import WORD_IMG from './icon/word.svg';
-import PDF_IMG from './icon/pdf.svg';
-import PPT_IMG from './icon/ppt.svg';
-import EXCEL_IMG from './icon/excel.svg';
-import OTHER_IMG from './icon/other.svg';
-import VIDEO_IMG from './icon/video.svg';
 import {clearStorage} from '../lib';
-import {message, Modal} from 'antd';
+
+
+export function resizeListener() {
+    // 定义设计图的尺寸 3840
+    const designSize = 1364;
+    // 获取 html 元素
+    const html = document.documentElement;
+    // 定义窗口的宽度
+    const clientW = html.clientWidth;
+    const clienH = html.clientHight;
+    // html 的fontsize 大小
+    const htmlRem = (clientW * 12) / designSize;
+    html.style.fontSize = htmlRem + 'px';
+    console.log('htmlRem',htmlRem)
+}
+
 
 // 退出登录
 export function logoutOut(navigate) {

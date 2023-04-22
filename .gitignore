@@ -6,4 +6,4 @@ packages/admin/node_modules
 target/*
 yarn.lock
 yarn-error.log
-npm-lock.json
+package-lock.json

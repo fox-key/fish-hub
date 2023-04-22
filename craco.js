@@ -1,5 +1,5 @@
 const { whenProd } = require('@craco/craco');
-
+const CracoLessPlugin = require('craco-less');
 module.exports = function (props) {
 	return {
 		babel: {
@@ -10,6 +10,21 @@ module.exports = function (props) {
 				),
 			],
 		},
+		plugins: [
+			{
+				plugin: CracoLessPlugin,
+				options: {
+					lessLoaderOptions: {
+						lessOptions: {
+							javascriptEnabled: true,
+							modifyVars: {
+								'@primary-color': '#0b9585', //主题色
+							},
+						},
+					},
+				},
+			},
+		],
 		webpack: {
 			configure: (webpackConfig) => {
 				return {

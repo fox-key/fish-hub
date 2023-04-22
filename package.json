@@ -18,13 +18,11 @@
     "build:blog": "lerna run build --scope=blog"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "6.3.0",
-    "react-scripts": "5.0.1",
-    "ahooks": "3.7.1",
+    "ahooks": "3.7.6",
+    "@ahooksjs/use-url-state": "^3.5.0",
     "antd": "^4.24.2",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.7",
     "downloadjs": "^1.4.7",
     "echarts": "^5.3.3",
     "js-base64": "^3.7.5",
@@ -32,23 +30,29 @@
     "lodash": "^4.17.21",
     "lru-cache": "^6.0.0",
     "mime-match": "^1.0.2",
+    "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "query-string": "^7.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
     "store2": "^2.14.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
-    "lerna": "^6.0.3",
     "@craco/craco": "^7.0.0",
-    "cross-env": "^7.0.3",
-    "http-proxy-middleware": "^2.0.1",
-    "lint-staged": "^12.1.4",
-    "typescript": "^4.7.4",
     "@types/lodash": "^4.14.182",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "commitizen": "^4.3.0",
     "commitlint-config-cz": "^0.13.3",
+    "craco-less": "^2.1.0-alpha.0",
+    "cross-env": "^7.0.3",
     "cz-customizable": "^7.0.0",
-    "babel-plugin-transform-remove-console": "^6.9.4"
+    "http-proxy-middleware": "^2.0.1",
+    "lerna": "^6.0.3",
+    "lint-staged": "^12.1.4",
+    "typescript": "^4.7.4"
   },
   "config": {
     "commitizen": {
