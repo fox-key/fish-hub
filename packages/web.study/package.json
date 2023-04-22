@@ -1,0 +1,29 @@
+{
+  "name": "web.study",
+  "version": "0.0.0",
+  "description": "study && test",
+  "keywords": [
+    "study"
+  ],
+  "author": "fengkai",
+  "homepage": "src",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://112.74.12.94:4873/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/fox-key/fish-hub.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/web.study.test.js"
+  }
+}
