@@ -1,1 +1,1 @@
-export default function _default(props: any): any;
+export default function _default(props: any): JSX.Element;
