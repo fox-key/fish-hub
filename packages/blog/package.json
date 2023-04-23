@@ -8,8 +8,8 @@
   "private": true,
   "scripts": {
     "start": "craco start",
-    "build": "craco ../../build",
-    "deploy": "gh-pages -d ../../build"
+    "build": "craco build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

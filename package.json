@@ -13,11 +13,10 @@
   "scripts": {
     "commit": "git add . && git-cz",
     "start:admin": "lerna run start --scope=fish-admin",
-    "build:admin": "lerna run build --scope=fish-admin",
+    "build:admin": "lerna run packages/blog/build --scope=fish-admin",
     "start:blog": "lerna run start --scope=blog",
-    "build:blog": "lerna run build --scope=blog",
-    "predeploy": "lerna run build --scope=blog",
-    "deploy:blog": "gh-pages -d build"
+    "build:blog": "lerna run packages/blog/build --scope=blog",
+    "deploy:blog": "lerna run deploy --scope=blog"
   },
   "dependencies": {
     "@ahooksjs/use-url-state": "^3.5.0",
