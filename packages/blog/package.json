@@ -4,10 +4,12 @@
   "description": "blog",
   "main": "src/index.js",
   "license": "ISC",
+  "homepage": "https://fox-key.github.io/fish-hub/",
   "private": true,
   "scripts": {
     "start": "craco start",
-    "build": "craco build"
+    "build": "craco ../../build",
+    "deploy": "gh-pages -d ../../build"
   },
   "eslintConfig": {
     "extends": [

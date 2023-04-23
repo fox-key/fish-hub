@@ -16,7 +16,8 @@
     "build:admin": "lerna run build --scope=fish-admin",
     "start:blog": "lerna run start --scope=blog",
     "build:blog": "lerna run build --scope=blog",
-    "deploy": "gh-pages -d build"
+    "predeploy": "lerna run build --scope=blog",
+    "deploy:blog": "gh-pages -d build"
   },
   "dependencies": {
     "@ahooksjs/use-url-state": "^3.5.0",
@@ -53,6 +54,7 @@
     "craco-less": "^2.1.0-alpha.0",
     "cross-env": "^7.0.3",
     "cz-customizable": "^7.0.0",
+    "gh-pages": "^5.0.0",
     "http-proxy-middleware": "^2.0.1",
     "lerna": "^6.0.3",
     "lint-staged": "^12.1.4",
