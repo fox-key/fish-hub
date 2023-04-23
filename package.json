@@ -15,7 +15,8 @@
     "start:admin": "lerna run start --scope=fish-admin",
     "build:admin": "lerna run build --scope=fish-admin",
     "start:blog": "lerna run start --scope=blog",
-    "build:blog": "lerna run build --scope=blog"
+    "build:blog": "lerna run build --scope=blog",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@ahooksjs/use-url-state": "^3.5.0",

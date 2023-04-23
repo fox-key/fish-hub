@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a0be44d5.css",
+    "main.js": "/static/js/main.dac1b2b0.js",
+    "static/media/taiyang.svg": "/static/media/taiyang.ab56e83d1567c5c97f1214d4a7203f2c.svg",
+    "index.html": "/index.html",
+    "static/media/yueliang.svg": "/static/media/yueliang.85b3a702276bab8bfedca6297d199298.svg"
+  },
+  "entrypoints": [
+    "static/css/main.a0be44d5.css",
+    "static/js/main.dac1b2b0.js"
+  ]
+}
