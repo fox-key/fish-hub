@@ -1,9 +1,0 @@
-node_modules/
-.vscode 
-.idea
-.fleet
-packages/admin/node_modules
-#target/*
-yarn.lock
-yarn-error.log
-package-lock.json
