@@ -24,6 +24,10 @@ module.exports = {
 			value: 'refactor',
 		},
 		{
+			name: '学习：学习新技术，语法或功能(study)',
+			value: 'study',
+		},
+		{
 			name: '性能：优化性能，提高代码执行性能 (perf)',
 			value: 'perf',
 		},

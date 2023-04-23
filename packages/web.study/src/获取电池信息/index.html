@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            (() => {
+                navigator.getBattery().then(battery => {
+                    console.log('battey', battery);
+                    // 获取设备电量剩余百分比
+                    const level = battery.level; //最大值为1,对应电量100%
+                    console.log(`电量: ${level*100}%`);
+
+                    const charging = battery.charging;
+                    console.log('充电状态: ' + (charging ? '充电中' : '未插电'))
+
+                    // 获取设备完全充电需要的时间
+                    const chargingTime = battery.chargingTime
+                    console.log('完全充电需要的时间: ' + chargingTime)
+
+                    // 获取设备完全放电 需要的时间
+                    const dischargingTime = battery.dischargingTime
+                    console.log('完全放电需要的时间: ' + dischargingTime)
+
+
+                    // event
+                    battery.addEventListener('levelchange', () => {
+                        console.log('电量改变: ' + battery.level)
+                    })
+
+                    battery.addEventListener('chargingchange', () => {
+                        console.log('充电状态改变: ' + battery.charging)
+                    })
+
+                    // 添加事件，当设备完全充电需要时间改变时触发
+                    battery.addEventListener('chargingtimechange', function () {
+                        console.log('完全充电需要时间: ' + battery.chargingTime)
+                    })
+
+                    // 添加事件，当设备完全放电需要时间改变时触发
+                    battery.addEventListener('dischargingtimechange', function () {
+                        console.log('完全放电需要时间: ' + battery.dischargingTime)
+                    })
+                    
+                })
+            })()
+        }
+    </script>
+</body>
+
+</html>
