@@ -1,0 +1,9 @@
+.Meals{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100rem;
+    bottom: 0;
+    overflow: auto;
+    padding-bottom: 120rem;
+}

@@ -12,11 +12,21 @@
   },
   "scripts": {
     "commit": "git add . && git-cz",
+    "deploy:blog": "lerna run deploy --scope=blog",
     "start:admin": "lerna run start --scope=fish-admin",
-    "build:admin": "lerna run packages/blog/build --scope=fish-admin",
+    "build:admin": "lerna run build --scope=fish-admin",
     "start:blog": "lerna run start --scope=blog",
-    "build:blog": "lerna run packages/blog/build --scope=blog",
-    "deploy:blog": "lerna run deploy --scope=blog"
+    "build:blog": "lerna run build --scope=blog",
+    "start:vue_shop": "lerna run serve --scope=vue_shop",
+    "build:vue_shop": "lerna run build --scope=vue_shop",
+    "start:my-music": "lerna run start --scope=my-music",
+    "build:my-music": "lerna run build --scope=my-music",
+    "start:order": "lerna run start --scope=order",
+    "build:order": "lerna run build --scope=order",
+    "start:cloud-music-react": "lerna run start --scope=cloud-music-react",
+    "build:cloud-music-react": "lerna run build --scope=cloud-music-react",
+    "start:taro_h5": "lerna run dev:h5 --scope=taro",
+    "build:taro_h5": "lerna run build:h5 --scope=taro"
   },
   "dependencies": {
     "@ahooksjs/use-url-state": "^3.5.0",

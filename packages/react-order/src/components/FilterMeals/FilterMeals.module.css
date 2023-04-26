@@ -1,0 +1,36 @@
+.FilterMeals{
+    height: 100rem;
+    position: fixed; left: 0; right: 0; top: 0;
+    border-bottom: 1px solid #f2f2f2;
+    z-index: 999;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
+.InputOuter{
+    background-color: #bfa;
+}
+
+
+.SearchInput{
+    width: 650rem;
+    height: 70rem;
+    border: none;
+    border-radius: 32rem;
+    padding-left: 65rem;
+    background-color: #f2f2f2;
+    -webkit-border-radius: 32rem;
+    -moz-border-radius: 32rem;
+    -ms-border-radius: 32rem;
+    -o-border-radius: 32rem;
+    font-size: 40rem;
+    /*outline: none;
+    */;
+}
+
+.searchIcon{
+    position: relative;
+    left: 55rem;
+    top: 3rem;
+    font-size: 40rem;
+}

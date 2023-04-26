@@ -1,0 +1,84 @@
+.Cart{
+    position: fixed;
+    bottom: 30rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 700rem;
+    height: 80rem;
+    background-color: black;
+    border-radius:40rem ;
+    -webkit-border-radius:40rem ;
+    -moz-border-radius:40rem ;
+    -ms-border-radius:40rem ;
+    -o-border-radius:40rem ;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50rem;
+    z-index: 1000;
+}
+
+.Icon{
+    width: 80rem;
+    position: absolute;
+    bottom: -6rem;
+    left: 0;
+}
+.Icon img{
+    width: 100%;
+}
+
+.Total{
+    position: absolute;
+    width: 36rem;
+    height: 36rem;
+    line-height: 36rem;
+    font-size: 16rem;
+    left:60%;
+    background-color: #f00;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.Cart .Price{
+    color: white;
+    height: 100%;
+    display: flex; align-items: center;
+    font-size: 32rem;
+    font-weight: bold;
+}
+.Cart .Price::before{
+    content:'合计￥';
+    font-size: 16rem;
+}
+
+.Cart .Button{
+    width: 200rem;
+    height: 100%;
+    background-color: #FCBF49;
+    border: none;
+    border-radius: 40rem;
+    font-size: 36rem;
+    -webkit-border-radius: 40rem;
+    -moz-border-radius: 40rem;
+    -ms-border-radius: 40rem;
+    -o-border-radius: 40rem;
+}
+.Cart .disabledButton{
+    background-color: #777;
+    color: #ccc;
+}
+
+.none{
+    color: gray;
+    height: 100%;
+    display: flex; align-items: center;
+    font-size: 32rem;
+    font-weight: bold;
+}

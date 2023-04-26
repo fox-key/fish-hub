@@ -1,0 +1,37 @@
+.sub,.add{
+    border: none;
+    background-color: #fcbf49;
+    width: 40rem;
+    height: 40rem;
+    line-height: 40rem;
+    border-radius: 50%;
+    /* font-size: 25px; */
+   text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.sub{
+    background-color: white;
+    border: 1px solid black;
+    /* font-size: 36rem; */
+}
+
+.count{
+    font-size: 32rem;
+    margin: 0  20rem;
+    
+}
+.count span {
+    font-size: 36rem;
+}
+.plus,.jian{
+    font-size: 30rem;
+}
+
+.Counter{
+    display: flex; justify-content: center; align-items: center;
+}
