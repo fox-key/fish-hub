@@ -3,7 +3,7 @@ node_modules/
 .idea
 .fleet
 packages/admin/node_modules
-target/*
+#target/*
 yarn.lock
 yarn-error.log
 package-lock.json
