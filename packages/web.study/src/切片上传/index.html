@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/spark-md5/3.0.2/spark-md5.js"></script>
+</head>
+
+<body>
+    <input type="file" />
+
+
+    <script>
+        const inp = document.querySelector('input');
+
+        inp.onchange = async e => {
+            const file = inp.files[0];
+            if (!file) {
+                return;
+            }
+            const chunks = createChunks(file, 1 * 1024 * 1024);
+            const hashStr = await hash(chunks);
+            const hashStr2 = await hash(chunks);
+
+            console.log(hashStr, hashStr2);
+
+        }
+
+        function createChunks(file, chunkSize) {
+            const result = [];
+            for (let i = 0; i < file.size; i += chunkSize) {
+                result.push(file.slice(i, i + chunkSize))
+            }
+            return result
+        }
+
+        async function hash(chunks) {
+            return new Promise(resolve => {
+                const spark = new SparkMD5();
+
+                function _read(i) {
+                    if (i >= chunks.length) {
+                        resolve(spark.end())
+                    }
+                    const blob = chunks[i];
+                    const reader = new FileReader();
+                    reader.onload = e => {
+                        const bytes = e.target.result;
+                        spark.append(bytes);
+                        _read(i + 1)
+                    }
+                    reader.readAsArrayBuffer(blob);
+                }
+                _read(0)
+            })
+        }
+
+        async function UploadChunk(chunkList, fileMd5Value) {
+            const requestList = []
+            for (let i = 0; i < chunkList; i++) {
+                requestList.push(upload({
+                    chunkList: chunkList,
+                    chunk: chunkList[i],
+                    fileMd5Value,
+                    i
+                }))
+            }
+            // 并发上传
+            if (requestList ?.length) {
+                await Promise.all(requestList)
+            }
+        }
+
+
+        function upload({
+            chunkList,
+            chunk,
+            fileMd5Value,
+            i
+        }) {
+            current = 0
+            let form = new FormData()
+            form.append("data", chunk) //切片流
+            form.append("total", chunkList.length) //总片数
+            form.append("index", i) //当前是第几片     
+            form.append("fileMd5Value", fileMd5Value)
+            return axios({
+                method: 'post',
+                url: BaseUrl + "/upload",
+                data: form
+            }).then(({
+                data
+            }) => {
+                if (data.stat) {
+                    current = current + 1
+                    // 获取到上传的进度
+                    const uploadPercent = Math.ceil((current / chunkList.length) * 100)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
