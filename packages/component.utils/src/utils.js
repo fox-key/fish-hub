@@ -7,7 +7,7 @@ import {
     zipObject,
     compact,
     ceil,
-	some
+    some, map
 } from 'lodash';
 import moment from 'moment';
 import React from 'react';
@@ -26,6 +26,11 @@ export function resizeListener() {
     const htmlRem = (clientW * 12) / designSize;
     html.style.fontSize = htmlRem + 'px';
     console.log('htmlRem',htmlRem)
+}
+
+export function findOptions(list,keys){
+    const [key,val] = keys
+    return list?.filter(m=>map(m[key].split(','),text=>text.toLowerCase()).includes(val))
 }
 
 

@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import { fill, truncate, isArray, isEmpty, isObject, zipObject, compact, ceil, some } from 'lodash';
+import { fill, truncate, isArray, isEmpty, isObject, zipObject, compact, ceil, some, map } from 'lodash';
 import moment from 'moment';
 import React from 'react';
 import { clearStorage } from '../lib';
@@ -15,6 +15,10 @@ export function resizeListener() {
     const htmlRem = (clientW * 12) / designSize;
     html.style.fontSize = htmlRem + 'px';
     console.log('htmlRem', htmlRem);
+}
+export function findOptions(list, keys) {
+    const [key, val] = keys;
+    return list === null || list === void 0 ? void 0 : list.filter(m => map(m[key].split(','), text => text.toLowerCase()).includes(val));
 }
 // 退出登录
 export function logoutOut(navigate) {

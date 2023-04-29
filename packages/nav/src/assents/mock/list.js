@@ -1,59 +1,7 @@
+import Framework from "./framework";
+import Design from "./design";
 
 export default [
-    {
-        title:'React',
-        link:'https://react.dev/',
-        keywords:'react',
-        category:'framework',
-        icon:'react'
-    },
-    {
-        title:'Vue',
-        link:'https://vuejs.org/',
-        keywords:'Vue',
-        category:'framework',
-        icon:'vue'
-    },
-    {
-        title:'Angular',
-        link:'https://angular.io/',
-        keywords:'Angular',
-        category:'framework',
-        icon:'angular'
-    },
-    {
-        title:'Umi',
-        link:'https://umijs.org/',
-        keywords:'Umi',
-        category:'framework',
-        icon:'umi'
-    },
-    {
-        title:'Dvajs',
-        link:'https://dvajs.com/',
-        keywords:'dva',
-        category:'framework',
-        icon:'dva'
-    },
-    {
-        title:'Svelet',
-        link:'https://svelte.dev/',
-        keywords:'Svelet',
-        category:'framework',
-        icon:'svelte'
-    },
-    {
-        title:'Next',
-        link:'https://nextjs.org/',
-        keywords:'next',
-        category:'framework',
-        icon:'next'
-    },
-    {
-        title:'Taro',
-        link:'https://taro.jd.com/',
-        keywords:'taro',
-        category:'framework',
-        icon:'taro'
-    },
+    ...Framework,
+    ...Design
 ]
