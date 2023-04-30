@@ -11,7 +11,7 @@ const routes = [
         ),
         children: [
             {
-                path: 'home',
+                path: '/',
                 element: (<Home/>),
                 children:[
                     {
