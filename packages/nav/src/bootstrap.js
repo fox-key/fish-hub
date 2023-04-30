@@ -7,6 +7,7 @@ import {configResponsive, useResponsive} from "ahooks";
 import {userContext} from "./userContext";
 import {useToggleTheme} from "./hooks";
 import Footer from "components/Footer";
+import {getStorage} from "@component/utils";
 
 configResponsive({
     small: 400,
@@ -19,7 +20,9 @@ export default function Bootstrap() {
 
     const {middle} = useResponsive()
 
-
+    if(getStorage('theme')){
+        document.documentElement.style.backgroundColor = getStorage('theme');
+    }
 
     // useEffect(() => {
     //     window.addEventListener('resize', resizeListener);
@@ -30,7 +33,7 @@ export default function Bootstrap() {
         screen: useResponsive(),
         theme: background
     }}>
-        <div className={'bootstrap'} style={{backgroundColor: background}} color={color}>
+        <div className={'bootstrap'} >
             <Header/>
             <Menu/>
             <div className={'main'}>

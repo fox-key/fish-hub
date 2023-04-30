@@ -1,9 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {getStorage} from "@component/utils";
 
 export const counterSlice = createSlice({
     name: 'white',
     initialState: {
-        value: 'black',
+        value: getStorage('theme')||'black',
     },
     reducers: {
         white(state) {

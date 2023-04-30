@@ -1,18 +1,25 @@
-import {Outlet} from "react-router-dom";
 import React from "react";
-import {nav_list as _list} from "assents/mock";
-import {Col, Row} from "antd";
+import {Button, Col, Empty, Result, Row} from "antd";
 import Styles from './list.module.less'
 import Card, {CardTitle} from 'components/Card'
 import {flatten, isEmpty} from "lodash";
 import {findOptions} from "@component/utils";
 import {useSelector} from "react-redux";
+import {useToggleTheme} from "hooks";
 
 export default function () {
 
     const nav_list = useSelector(state => state.list.value)
-    // const _list = findOptions(flatten(new Array(20).fill(nav_list)), ['category', 'framework'])
-    // const nav_list = flatten(new Array(5).fill(_list));
+    const {color} = useToggleTheme();
+
+
+    if(isEmpty(nav_list)){
+        return  (
+            <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={<div style={{color}}>
+                暂无数据
+            </div>}/>
+        )
+    }
 
     const _frame_list = findOptions(nav_list, ['category', 'framework'])
     const _ui_list = findOptions(nav_list, ['category', 'design'])
