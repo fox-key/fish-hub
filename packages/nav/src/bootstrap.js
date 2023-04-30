@@ -1,4 +1,4 @@
-import {Outlet} from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import Header from 'components/Header'
 import Menu from "components/Menu";
 import {FloatButton} from 'antd';
@@ -7,6 +7,7 @@ import {configResponsive, useResponsive} from "ahooks";
 import {userContext} from "./userContext";
 import {useToggleTheme} from "./hooks";
 import Footer from "components/Footer";
+import {useEffect} from "react";
 
 configResponsive({
     small: 400,
@@ -16,8 +17,13 @@ configResponsive({
 
 export default function Bootstrap() {
     const {background, color} = useToggleTheme();
+    const navigate = useNavigate()
 
     const {middle} = useResponsive()
+
+    useEffect(()=>{
+        navigate('/home')
+    })
 
 
     // useEffect(() => {
