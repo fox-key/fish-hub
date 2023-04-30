@@ -25,14 +25,16 @@ export function resizeListener() {
     // html 的fontsize 大小
     const htmlRem = (clientW * 12) / designSize;
     html.style.fontSize = htmlRem + 'px';
-    console.log('htmlRem',htmlRem)
 }
 
-export function findOptions(list,keys){
-    const [key,val] = keys
-    return list?.filter(m=>map(m[key].split(','),text=>text.toLowerCase()).includes(val))
+export function findOptions(list=[],keys){
+    const [key,val=''] = keys;
+    return list?.filter(m=>{
+        const _keywords = map(m[key].split(','),text=>text.toLowerCase())
+        const _val = val.trim().toLowerCase()
+        return map(_keywords,text=>new RegExp(_val).test(text.toLowerCase())).includes(true)
+    })
 }
-
 
 // 退出登录
 export function logoutOut(navigate) {

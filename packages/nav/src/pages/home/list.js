@@ -6,10 +6,13 @@ import Styles from './list.module.less'
 import Card, {CardTitle} from 'components/Card'
 import {flatten, isEmpty} from "lodash";
 import {findOptions} from "@component/utils";
+import {useSelector} from "react-redux";
 
 export default function () {
+
+    const nav_list = useSelector(state => state.list.value)
     // const _list = findOptions(flatten(new Array(20).fill(nav_list)), ['category', 'framework'])
-    const nav_list = flatten(new Array(5).fill(_list));
+    // const nav_list = flatten(new Array(5).fill(_list));
 
     const _frame_list = findOptions(nav_list, ['category', 'framework'])
     const _ui_list = findOptions(nav_list, ['category', 'design'])

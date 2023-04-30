@@ -79,7 +79,7 @@ export default [
     },
     {
         title: 'Flutter',
-        link: 'https://facebook.github.io/react-native/',
+        link: 'https://flutter.io/',
         keywords: 'flutter',
         category: 'framework',
         icon: 'flutter'

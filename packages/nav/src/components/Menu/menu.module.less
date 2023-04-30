@@ -3,40 +3,51 @@
   width:100%;
   height: 80px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   position: sticky;top: 0px;
   border-bottom: 1px solid gray;
+  display: flex;
+  align-items: center;
   z-index: 100;
   .logo{
     width: 200px;
-    margin-left: 15px;
+    position: absolute;left: 15px;
     img{
       width: 100%;
       cursor: pointer;
     }
   }
   .content{
-    flex: 3;
-    ul{margin: 0}
-    a{
-      text-decoration: none;
-      color: black;
-      outline: none;
-      margin: 0 10px 0 0;
-      font-size: 16px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    .submenu{
+      flex: 3;
+      ul{margin: 0}
+      a{
+        text-decoration: none;
+        color: black;
+        outline: none;
+        margin: 0 10px 0 0;
+        font-size: 16px;
+      }
     }
-  }
-  .tools{
-    flex: 1;
-    float: right;
-    min-width: 100px !important;
-    font-size: 22px;
-    color: #fff;
-
-    span{
-      margin: 5px;
-      cursor: pointer;
+    .tools{
+      min-width: 100px !important;
+      font-size: 22px;
+      color: #fff;
+      span{
+        margin: 5px;
+        cursor: pointer;
+      }
     }
   }
 }
+
+@media screen and (max-width:629px){
+  .content{
+    width: 90% !important;
+  }
+}
+
