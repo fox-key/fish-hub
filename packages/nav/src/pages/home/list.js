@@ -1,8 +1,8 @@
 import React from "react";
-import {Button, Col, Empty, Result, Row} from "antd";
+import { Col, Empty,  Row} from "antd";
 import Styles from './list.module.less'
 import Card, {CardTitle} from 'components/Card'
-import {flatten, isEmpty} from "lodash";
+import { isEmpty} from "lodash";
 import {findOptions} from "@component/utils";
 import {useSelector} from "react-redux";
 import {useToggleTheme} from "hooks";
@@ -21,18 +21,21 @@ export default function () {
         )
     }
 
-    const _frame_list = findOptions(nav_list, ['category', 'framework'])
-    const _ui_list = findOptions(nav_list, ['category', 'design'])
-    const _react_list = findOptions(nav_list, ['category', 'react'])
-    const _vue_list = findOptions(nav_list, ['category', 'vue'])
-    const _lib_list = findOptions(nav_list, ['category', 'library'])
+    const [_frame_list,_ui_list,_react_list,_vue_list,_lib_list] =
+        ['framework','design','react','vue','library'].
+        map(category=>findOptions(nav_list, ['category', category]));
 
     return <div>
-        <Category list={_frame_list} title='FRAMEWOEK'/>
-        <Category list={_ui_list} title='UI/DESIGN'/>
-        <Category list={_react_list} title='React'/>
-        <Category list={_vue_list} title='Vue'/>
-        <Category list={_lib_list} title='LIBRARY'/>
+        {
+            [
+                {data:_frame_list,title:'FRAMEWORK'},
+                {data:_ui_list,title:'UI/DESIGN'},
+                {data:_react_list,title:'React'},
+                {data:_vue_list,title:'Vue'},
+                {data:_lib_list,title:'LIBRARY'},
+
+            ].map(({data,title})=> <Category list={data} title={title}/>)
+        }
     </div>
 }
 

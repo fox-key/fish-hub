@@ -3,7 +3,7 @@ import {nav_list} from "assents/mock";
 import {flatten, isEmpty} from "lodash";
 import {findOptions} from "@component/utils";
 
-const _list = flatten(new Array(5).fill(nav_list))
+const _list = flatten(new Array(1).fill(nav_list))
 export const listSlice = createSlice({
     name: 'list',
     initialState: {

@@ -3,7 +3,7 @@ export default [
     {
         title: 'React',
         link: 'https://react.dev/',
-        keywords: 'react',
+        keywords: 'react,框架',
         category: 'framework',
         icon: 'react'
     },
@@ -25,13 +25,13 @@ export default [
         title: 'Umi',
         link: 'https://umijs.org/',
         keywords: 'Umi',
-        category: 'framework',
+        category: 'framework,react',
         icon: 'umi'
     },
     {
         title: 'Dvajs',
         link: 'https://dvajs.com/',
-        keywords: 'dva',
+        keywords: 'dva,react',
         category: 'framework',
         icon: 'dva'
     },
@@ -45,35 +45,35 @@ export default [
     {
         title: 'Next',
         link: 'https://nextjs.org/',
-        keywords: 'next',
+        keywords: 'next,react',
         category: 'framework',
         icon: 'next'
     },
     {
         title: 'Taro',
         link: 'https://taro.jd.com/',
-        keywords: 'taro',
+        keywords: 'taro,react',
         category: 'framework',
         icon: 'taro'
     },
     {
         title: 'Nuxt',
         link: 'https://nuxt.com/',
-        keywords: 'Nuxt',
+        keywords: 'Nuxt,vue',
         category: 'framework',
         icon: 'nuxt'
     },
     {
         title: 'Electron',
         link: 'https://www.electronjs.org/',
-        keywords: 'electron',
+        keywords: 'electron,vue',
         category: 'framework',
         icon: 'electron'
     },
     {
         title: 'ReactNative',
         link: 'https://facebook.github.io/react-native/',
-        keywords: 'ReactNative',
+        keywords: 'ReactNative,react',
         category: 'framework',
         icon: 'react_native'
     },
@@ -99,21 +99,21 @@ export default [
     {
         title: 'CreateReactApp',
         link: 'https://create-react-app.dev/',
-        keywords: 'CreateReactApp',
+        keywords: 'CreateReactApp,react',
         category: 'react,library',
         icon: 'create_react_app'
     },
     {
         title: 'ReactRouter',
         link: 'https://reacttraining.com/react-router/',
-        keywords: 'ReactRouter',
+        keywords: 'ReactRouter,react',
         category: 'react,library',
         icon: 'react_router'
     },
     {
         title: 'ahooks',
         link: 'https://ahooks.js.org/',
-        keywords: 'ahooks',
+        keywords: 'ahooks,react',
         category: 'react,library',
         icon: 'ahooks'
     },
