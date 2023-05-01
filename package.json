@@ -26,7 +26,8 @@
     "start:cloud-music-react": "lerna run start --scope=cloud-music-react",
     "build:cloud-music-react": "lerna run build --scope=cloud-music-react",
     "start:taro_h5": "lerna run dev:h5 --scope=taro",
-    "build:taro_h5": "lerna run build:h5 --scope=taro"
+    "build:taro_h5": "lerna run build:h5 --scope=taro",
+    "upload:nav": "cross-env NAME=nav node ./upload.js"
   },
   "dependencies": {
     "@ahooksjs/use-url-state": "^3.5.0",

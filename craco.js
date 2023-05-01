@@ -25,22 +25,22 @@ module.exports = function (props) {
 				},
 			},
 		],
-		webpack: {
-			configure: (webpackConfig) => {
-				return {
-					...webpackConfig,
-					...whenProd(
-						() => ({
-							externals: {
-								react: 'React',
-								'react-dom': 'ReactDOM',
-							},
-						}),
-						{},
-					),
-				};
-			},
-		},
+		// webpack: {
+		// 	configure: (webpackConfig) => {
+		// 		return {
+		// 			...webpackConfig,
+		// 			...whenProd(
+		// 				() => ({
+		// 					externals: {
+		// 						react: 'React',
+		// 						'react-dom': 'ReactDOM',
+		// 					},
+		// 				}),
+		// 				{},
+		// 			),
+		// 		};
+		// 	},
+		// },
 		...props,
 	};
 };

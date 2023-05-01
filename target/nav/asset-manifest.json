@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.c4ecb1fd.css",
-    "main.js": "/static/js/main.bcda8687.js",
-    "static/media/taiyang.svg": "/static/media/taiyang.ab56e83d1567c5c97f1214d4a7203f2c.svg",
-    "index.html": "/index.html",
-    "static/media/yueliang.svg": "/static/media/yueliang.85b3a702276bab8bfedca6297d199298.svg"
+    "main.css": "./static/css/main.71659864.css",
+    "main.js": "./static/js/main.acd8fd45.js",
+    "static/media/taiyang.svg": "./static/media/taiyang.ab56e83d1567c5c97f1214d4a7203f2c.svg",
+    "index.html": "./index.html",
+    "static/media/yueliang.svg": "./static/media/yueliang.85b3a702276bab8bfedca6297d199298.svg"
   },
   "entrypoints": [
-    "static/css/main.c4ecb1fd.css",
-    "static/js/main.bcda8687.js"
+    "static/css/main.71659864.css",
+    "static/js/main.acd8fd45.js"
   ]
 }

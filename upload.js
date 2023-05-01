@@ -1,22 +1,22 @@
-const path = require('path');
 const {NodeSSH} = require('node-ssh');
+const path = require("path");
 const ssh = new NodeSSH();
 
-const distPath = path.resolve(__dirname, './build');
+const distPath = path.resolve(__dirname, `./target/${process.env.NAME}`);
 
 (function () {
     ssh.connect({
-        host: '101.42.119.183',
+        host: '114.116.0.178',
         username: 'root',
         port: '22',
-        password: ''
+        password: '***'
     }).then(function () {
         const failed = [];
         const successful = [];
         console.log('正在上传...')
         ssh.putDirectory(
             `${distPath}`,
-            `/root/react-order/build`,
+            `/var/www/html/${process.env.NAME}`,
             {
                 recursive: true,
                 concurrency: 10,
