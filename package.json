@@ -52,7 +52,8 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "store2": "^2.14.2"
+    "store2": "^2.14.2",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
@@ -71,7 +72,8 @@
     "lint-staged": "^12.1.4",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "node-ssh": "^13.0.0"
   },
   "config": {
     "commitizen": {

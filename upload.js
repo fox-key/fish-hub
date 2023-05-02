@@ -9,8 +9,9 @@ const distPath = path.resolve(__dirname, `./target/${process.env.NAME}`);
         host: '114.116.0.178',
         username: 'root',
         port: '22',
-        password: '***'
+        password: '****'
     }).then(function () {
+        console.log('登陆成功')
         const failed = [];
         const successful = [];
         console.log('正在上传...')
@@ -39,14 +40,21 @@ const distPath = path.resolve(__dirname, `./target/${process.env.NAME}`);
             }
         ).then(status => {
             if (status) {
-                console.log(status, '上传成功!')
-                ssh.execCommand('sh reload.sh', {cwd: '/root/shell'}).then(res => {
-                    if(res?.code==0){
-                        console.log('脚本执行成功，nginx重启')
-                    }else{
-                        console.log('脚本执行失败')
-                    }
-                    process.exit(0)
+                console.log(status, '资源上传成功!')
+                ssh.putFile(
+                    path.resolve(__dirname, `./nginx.conf`),
+                    `/etc/nginx/nginx.conf`
+                ).then(() => {
+                    console.log('nginx.conf 已上传')
+                    ssh.execCommand('sh reload.sh', { cwd: '/root/shells' }).then((result) => {
+                        if (!result.stderr) {
+                            console.log('远程脚本执行成功！');
+                            process.exit(0);
+                        } else {
+                            console.log('远程脚本执行失败:', result);
+                            process.exit(0);
+                        }
+                    });
                 })
                 // process.exit(0)
             } else {
@@ -57,5 +65,8 @@ const distPath = path.resolve(__dirname, `./target/${process.env.NAME}`);
             console.log('e', e)
             process.exit(0)
         })
+    }).catch(e=>{
+        console.log('登陆失败，是否未填写密码？')
+        console.log(e)
     })
 })()
