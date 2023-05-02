@@ -8,7 +8,7 @@ export default function Card({info}) {
     const {color} = useToggleTheme();
     const _text = (color !== 'black') ? 'text-gray-50 ' : ' text-coolGray-800 hover:bg-coolGray-50'
     return <div  onClick={() => window.location.href = info?.link}
-                 className={`flex flex-col items-center cursor-pointer hover:animate-bounce p-4 lg:p-8  hover:shadow-lg lg:hover:border-transparent `}>
+                 className={`flex flex-col items-center cursor-pointer hover:scale-110  p-4 lg:p-8  hover:shadow-lg lg:hover:border-transparent `}>
         <div>
             {getIcon(info.icon)}
         </div>

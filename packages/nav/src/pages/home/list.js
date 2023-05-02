@@ -9,7 +9,9 @@ import {useToggleTheme} from "hooks";
 
 export default function () {
 
-    const nav_list = useSelector(state => state.list.value)
+    const nav_list = useSelector(state => state.list.value);
+    const isList = useSelector(state => state.list.isList);
+
     const {color} = useToggleTheme();
 
 
@@ -21,9 +23,17 @@ export default function () {
         )
     }
 
+    if(!isList){
+        return <div>
+            <Category list={nav_list} />
+        </div>
+    }
+
+
     const [_frame_list,_ui_list,_react_list,_vue_list,_lib_list] =
         ['framework','design','react','vue','library'].
         map(category=>findOptions(nav_list, ['category', category]));
+
 
     return <div>
         {

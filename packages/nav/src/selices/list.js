@@ -7,7 +7,8 @@ const _list = flatten(new Array(1).fill(nav_list))
 export const listSlice = createSlice({
     name: 'list',
     initialState: {
-        value: _list
+        value: _list,
+        isList:true
     },
     reducers: {
         search(state, {payload}) {
@@ -16,10 +17,13 @@ export const listSlice = createSlice({
         },
         reset(state) {
             state.value = _list
+        },
+        toggleCategory(state,{payload}){
+            state.isList = !(state.isList);
         }
     },
 });
 
-export const {search, reset} = listSlice.actions;
+export const {search, reset,toggleCategory} = listSlice.actions;
 
 export default listSlice.reducer;

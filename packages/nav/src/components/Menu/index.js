@@ -5,7 +5,8 @@ import {Link} from "react-router-dom";
 import {useUserContext} from "userContext";
 import {
     SearchOutlined,
-    UnorderedListOutlined
+    UnorderedListOutlined,
+    AppstoreOutlined
 } from '@ant-design/icons';
 import {ReactComponent as AlipayCircleOutlined} from 'assents/icon/taiyang.svg'
 import {ReactComponent as AlipayOutlined} from 'assents/icon/yueliang.svg'
@@ -13,14 +14,14 @@ import {useToggleTheme} from 'hooks'
 import {Drawer, Button, Input} from "antd";
 import {useToggle} from "ahooks";
 import {useRoutes} from "@component/utils";
-import {useDispatch} from "react-redux";
-import {reset, search} from "selices/list";
+import {useDispatch, useSelector} from "react-redux";
+import {reset, search,toggleCategory} from "selices/list";
 import {useEffect, useState} from "react";
 
 export default function () {
     const {screen: {middle, small}} = useUserContext();
+    const isList = useSelector(state => state.list.isList);
     const {color, toggle, background} = useToggleTheme();
-    const [open, {toggle: toggleOpen}] = useToggle();
     const [visible, {toggle: toggleVisbile}] = useToggle(false);
     const [_q, setKeyWord] = useState('');
 
@@ -83,13 +84,14 @@ export default function () {
                     }
 
                     <SearchOutlined onClick={toggleVisbile}/>
-                    <UnorderedListOutlined onClick={toggleOpen}/>
+                    {
+                        isList?<UnorderedListOutlined onClick={()=>dispatch(toggleCategory())}/>:
+                            <AppstoreOutlined onClick={()=>dispatch(toggleCategory())}/>
+                    }
+
+
                 </div>
             </div>
         </div>
-        <Drawer title={null} placement="right" onClose={toggleOpen} open={open}>
-            {map(menus, (i, index) => <p onClick={() => historyPush(i.path)} key={index} children={i.title}
-                                         style={{cursor: 'pointer'}}/>)}
-        </Drawer>
     </div>
 }

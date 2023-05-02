@@ -4,7 +4,7 @@ import {getStorage} from "@component/utils";
 export const counterSlice = createSlice({
     name: 'white',
     initialState: {
-        value: getStorage('theme')||'black',
+        value: getStorage('theme')||'white',
     },
     reducers: {
         white(state) {
