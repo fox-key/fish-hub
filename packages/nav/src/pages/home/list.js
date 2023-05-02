@@ -30,8 +30,8 @@ export default function () {
     }
 
 
-    const [_frame_list,_ui_list,_react_list,_vue_list,_lib_list] =
-        ['framework','design','react','vue','library'].
+    const [_frame_list,_ui_list,_react_list,_vue_list,_lib_list,_other_list,_website_list] =
+        ['framework','design','HTML/CSS','NODEJS','library','other','website'].
         map(category=>findOptions(nav_list, ['category', category]));
 
 
@@ -40,9 +40,11 @@ export default function () {
             [
                 {data:_frame_list,title:'FRAMEWORK'},
                 {data:_ui_list,title:'UI/DESIGN'},
-                {data:_react_list,title:'React'},
-                {data:_vue_list,title:'Vue'},
+                {data:_react_list,title:'HTML/CSS'},
+                {data:_vue_list,title:'NODEJS'},
                 {data:_lib_list,title:'LIBRARY'},
+                {data:_other_list,title:'OTHER'},
+                {data:_website_list,title:'WEBSITE'},
 
             ].map(({data,title})=> <Category list={data} title={title}/>)
         }
