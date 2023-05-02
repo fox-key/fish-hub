@@ -15,8 +15,10 @@ import {Drawer, Button, Input} from "antd";
 import {useToggle} from "ahooks";
 import {useRoutes} from "@component/utils";
 import {useDispatch, useSelector} from "react-redux";
-import {reset, search,toggleCategory} from "selices/list";
+import {reset, search, toggleCategory} from "selices/list";
+import {toggleSwitch} from "selices/sliceThemer";
 import {useEffect, useState} from "react";
+import {  Switch } from 'antd-mobile'
 
 export default function () {
     const {screen: {middle, small}} = useUserContext();
@@ -71,11 +73,17 @@ export default function () {
             <div className={`${Styles.tools}`}
                  style={Object.assign({color: color}, !middle && visible ? {width: '100%'} : {})}>
                 <div className='flex'>
+                    {
+                        middle &&  <Switch uncheckedText='self' checkedText='blank' onChange={(val)=>{
+                            dispatch(toggleSwitch(val))
+                        }
+                        }/>
+                    }
                 <span onClick={toggle}>
                  {
                      background == 'white' ? <AlipayOutlined/> : <AlipayCircleOutlined/>
                  }
-            </span>
+                  </span>
                     {
 
                         visible && <Input onBlur={toggleVisbile} autoFocus placeholder="关键字"
@@ -85,8 +93,8 @@ export default function () {
 
                     <SearchOutlined onClick={toggleVisbile}/>
                     {
-                        isList?<UnorderedListOutlined onClick={()=>dispatch(toggleCategory())}/>:
-                            <AppstoreOutlined onClick={()=>dispatch(toggleCategory())}/>
+                        isList ? <UnorderedListOutlined onClick={() => dispatch(toggleCategory())}/> :
+                            <AppstoreOutlined onClick={() => dispatch(toggleCategory())}/>
                     }
 
 

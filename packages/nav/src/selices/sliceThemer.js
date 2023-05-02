@@ -4,7 +4,8 @@ import {getStorage} from "@component/utils";
 export const counterSlice = createSlice({
     name: 'white',
     initialState: {
-        value: getStorage('theme')||'white',
+        value: getStorage('theme') || 'white',
+        is_switch_checked: false
     },
     reducers: {
         white(state) {
@@ -12,10 +13,13 @@ export const counterSlice = createSlice({
         },
         dark(state) {
             state.value = 'black';
+        },
+        toggleSwitch(state, {payload}) {
+            state.is_switch_checked = payload
         }
     },
 });
 
-export const {white, dark} = counterSlice.actions;
+export const {white, dark, toggleSwitch} = counterSlice.actions;
 
 export default counterSlice.reducer;

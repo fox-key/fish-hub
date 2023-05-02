@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "./static/css/main.a1164f8c.css",
-    "main.js": "./static/js/main.fd74eaa4.js",
+    "main.css": "./static/css/main.e65382e0.css",
+    "main.js": "./static/js/main.0df15779.js",
     "static/media/taiyang.svg": "./static/media/taiyang.ab56e83d1567c5c97f1214d4a7203f2c.svg",
     "index.html": "./index.html",
     "static/media/yueliang.svg": "./static/media/yueliang.85b3a702276bab8bfedca6297d199298.svg"
   },
   "entrypoints": [
-    "static/css/main.a1164f8c.css",
-    "static/js/main.fd74eaa4.js"
+    "static/css/main.e65382e0.css",
+    "static/js/main.0df15779.js"
   ]
 }
