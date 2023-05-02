@@ -1,22 +1,31 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {nav_list} from "assents/mock";
-import {flatten, isEmpty} from "lodash";
+// import {nav_list} from "assents/mock";
+import {flatten, isEmpty, map} from "lodash";
 import {findOptions} from "@component/utils";
+import _ from 'assents/mock/netflixscrape.json'
 
-const _list = flatten(new Array(1).fill(nav_list))
+// const _list = flatten(new Array(1).fill(nav_list))
+
+
+function _getList(list){
+    return flatten(map(list,m=>(m?.children??[])))
+}
+
+
+
 export const listSlice = createSlice({
     name: 'list',
     initialState: {
-        value: _list,
+        value: _getList(_),
         isList:true
     },
     reducers: {
         search(state, {payload}) {
             if (isEmpty(payload.q)) return
-            state.value = findOptions(_list, ['keywords', payload.q])
+            state.value = findOptions(_getList(_), ['keywords', payload.q])
         },
         reset(state) {
-            state.value = _list
+            state.value = _getList(_)
         },
         toggleCategory(state,{payload}){
             state.isList = !(state.isList);

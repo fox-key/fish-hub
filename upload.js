@@ -9,7 +9,7 @@ const distPath = path.resolve(__dirname, `./target/${process.env.NAME}`);
         host: '114.116.0.178',
         username: 'root',
         port: '22',
-        password: '****'
+        password: 'Rootadmin.'
     }).then(function () {
         console.log('登陆成功')
         const failed = [];

@@ -1,0 +1,13 @@
+{
+  "name": "puppeteer.js",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "write": "node ./src/netflixscrape.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

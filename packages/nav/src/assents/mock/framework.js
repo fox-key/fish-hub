@@ -92,8 +92,8 @@ export default [
     },  {
         title: 'QQ小程序',
         link: 'https://developers.weixin.qq.com/miniprogram/dev/framework/',
-        keywords: 'Weex',
-        category: 'qq小程序,QQ',
+        keywords: 'qq小程序,QQ',
+        category: 'framework',
         icon: 'qq'
     },
     {
