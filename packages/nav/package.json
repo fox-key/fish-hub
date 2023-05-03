@@ -1,6 +1,6 @@
 {
   "name": "helloNav",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "blog",
   "main": "src/index.js",
   "license": "ISC",
@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "npm version patch && craco build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

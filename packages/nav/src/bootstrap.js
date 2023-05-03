@@ -22,6 +22,11 @@ export default function Bootstrap() {
 
     if(getStorage('theme')){
         document.documentElement.style.backgroundColor = getStorage('theme');
+        if(getStorage('theme')=='black'){
+            document.documentElement.setAttribute('class','dark')
+        }else{
+            document.documentElement.removeAttribute('class')
+        }
     }
 
     // useEffect(() => {
