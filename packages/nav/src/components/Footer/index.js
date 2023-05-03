@@ -10,6 +10,7 @@ export default function (){
         }} className='flex justify-center items-center flex-col'>
             <p>Fish Hub written</p>
             <p>&copy;2023</p>
+            <p>response: https://gitee.com/fox-key/fish-hub.git </p>
         </footer>
     )
 }
